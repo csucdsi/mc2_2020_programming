@@ -14,8 +14,8 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
 
 raw <- read_sheet("https://docs.google.com/spreadsheets/d/1MJG0lwuE9f03LXEtaH53j-uJGHwAsAO1ckP_jDAm0gY/edit#gid=1389752095") %>%
         mutate(dt = date(Date), 
-               Name = paste(sprintf("[%s](%s)", Name, webpage), 
-                            sprintf("[%s](mailto:%s)", Email, Email))) %>% 
+               Name = paste(Name, sprintf("[%s](mailto:%s)", Email, Email)), 
+               Affiliation = sprintf("[%s](%s)", Affiliation, webpage)) %>% 
         select(-Date, -`Confirmed?`, -Email, -webpage) %>%
         relocate(c(Time,Name), .before=1)
         
