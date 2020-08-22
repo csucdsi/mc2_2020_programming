@@ -1,0 +1,15 @@
+name: "MC2"
+output_dir: "."
+navbar:
+  title: "Math Council Colloqium"
+
+
+
+output:
+  html_document:
+    toc: yes
+    toc_float: true
+    highlight: tango
+    theme: readable
+    lib_dir: site_libs
+    self_contained: no

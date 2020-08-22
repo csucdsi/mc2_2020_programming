@@ -1,0 +1,84 @@
+---
+title: "September Presentations: Computatioanl Methods & Programming for Math Majors"
+output:
+  html_document:
+    toc: no
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(googlesheets4); library(dplyr)
+library(kableExtra); library(lubridate)
+
+options(knitr.table.format = "html", knitr.kable.NA = '') 
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE) 
+
+raw <- read_sheet("https://docs.google.com/spreadsheets/d/1MJG0lwuE9f03LXEtaH53j-uJGHwAsAO1ckP_jDAm0gY/edit#gid=1389752095") %>%
+        mutate(dt = date(Date), 
+               Name = sprintf("[%s](%s)", Name, Email)) %>% 
+        select(-Date, -`Confirmed?`, -Email) %>%
+        relocate(c(Time,Name), .before=1)
+        
+
+sep04 <- filter(raw, dt=="2020-09-04") %>% select(-dt) %>% arrange(Time)
+sep11 <- filter(raw, dt=="2020-09-11") %>% select(-dt) %>% arrange(Time)
+sep18 <- filter(raw, dt=="2020-09-18") %>% select(-dt) %>% arrange(Time)
+sep25 <- filter(raw, dt=="2020-09-25") %>% select(-dt) %>% arrange(Time)
+```
+
+# Hosts: 
+
+* Berit Givens, Professor & Chair Department of Mathematics & Statistics, Cal Poly Pomona. 
+* Robin Donatello, Associate Professor of Statistics, Department of Mathematics & Statistics, Cal State Chico
+
+
+<br>
+
+# Friday September 4th, 2020 [Zoom Link]()
+```{r}
+kable(sep04) %>% 
+  kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
+  column_spec(1, width = "5%") %>% 
+  column_spec(2, width = "10%") %>%
+  column_spec(3, width = "10%") %>%
+  column_spec(4, width = "20%") %>% 
+  column_spec(5, width = "30%")
+```
+
+<br>
+
+# Friday September 11th, 2020 [Zoom Link]()
+```{r}
+kable(sep11) %>% 
+  kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
+  column_spec(1, width = "5%") %>% 
+  column_spec(2, width = "10%") %>%
+  column_spec(3, width = "10%") %>%
+  column_spec(4, width = "20%") %>% 
+  column_spec(5, width = "30%")
+```
+
+<br>
+
+# Friday September 18th, 2020 [Zoom Link]()
+```{r}
+kable(sep18) %>% 
+  kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
+  column_spec(1, width = "5%") %>% 
+  column_spec(2, width = "10%") %>%
+  column_spec(3, width = "10%") %>%
+  column_spec(4, width = "20%") %>% 
+  column_spec(5, width = "30%")
+```
+
+<br>
+
+# Friday September 25th, 2020 [Zoom Link]()
+```{r}
+kable(sep25) %>% 
+  kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
+  column_spec(1, width = "5%") %>% 
+  column_spec(2, width = "10%") %>%
+  column_spec(3, width = "10%") %>%
+  column_spec(4, width = "20%") %>% 
+  column_spec(5, width = "30%")
+```
