@@ -7,9 +7,7 @@ navbar:
 
 output:
   html_document:
-    toc: yes
-    toc_float: true
     highlight: tango
     theme: flatly
-    lib_dir: site_libs
-    self_contained: no
+    include:
+      after_body: footer.html

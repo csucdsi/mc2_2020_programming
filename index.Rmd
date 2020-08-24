@@ -29,12 +29,6 @@ sep25 <- filter(raw, dt=="2020-09-25") %>% select(-dt) %>% arrange(Time)
 
 The CSU Math Council Colloquia (MC$^2$) series provides CSU faculty in mathematics, statistics, and mathematics education with the opportunity to network and share best practices in any topics related to university level mathematics and statistics education.  For the September 2020 MC$^2$, faculty across the CSU share their insights and experiences with incorporating software and/or programming into courses for math and stats undergraduate majors.
 
-### Hosts: 
-
-* Berit Givens, Professor & Chair Department of Mathematics & Statistics, Cal Poly Pomona. bngivens@cpp.edu
-* Robin Donatello, Associate Professor of Statistics, Department of Mathematics & Statistics, Cal State Chico. rdonatello@csuchico.edu
-
-
 ----
 
 <br>
@@ -88,3 +82,12 @@ kable(sep25) %>%
   column_spec(4, width = "20%") %>% 
   column_spec(5, width = "30%")
 ```
+
+
+<hr>
+
+### Hosts: 
+
+* **Berit Givens**, Professor & Chair Department of Mathematics & Statistics, Cal Poly Pomona. bngivens@cpp.edu
+* **Robin Donatello**, Associate Professor of Statistics, Department of Mathematics & Statistics; Data Science Program Coordinator, Cal State Chico. rdonatello@csuchico.edu
+
