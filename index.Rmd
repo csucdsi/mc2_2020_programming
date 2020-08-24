@@ -1,5 +1,5 @@
 ---
-title: "Computational Methods & Programming for Math Majors"
+title: "Computational Methods & Programming for Math & Stats Majors"
 output:
   html_document:
     toc: no
@@ -27,16 +27,19 @@ sep25 <- filter(raw, dt=="2020-09-25") %>% select(-dt) %>% arrange(Time)
 ```
 <br>
 
+The CSU Math Council Colloquia (MC$^2$) series provides CSU faculty in mathematics, statistics, and mathematics education with the opportunity to network and share best practices in any topics related to university level mathematics and statistics education.  For the September 2020 MC$^2$, faculty across the CSU share their insights and experiences with incorporating software and/or programming into courses for math and stats undergraduate majors.
 
-# Hosts: 
+### Hosts: 
 
 * Berit Givens, Professor & Chair Department of Mathematics & Statistics, Cal Poly Pomona. bngivens@cpp.edu
 * Robin Donatello, Associate Professor of Statistics, Department of Mathematics & Statistics, Cal State Chico. rdonatello@csuchico.edu
 
 
+----
+
 <br>
 
-# Friday September 4th [[Zoom Link]]()
+## Friday September 4th [[Zoom Link]]()
 ```{r}
 kable(sep04) %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
@@ -49,7 +52,7 @@ kable(sep04) %>%
 
 <br>
 
-# Friday September 11th [[Zoom Link]]()
+## Friday September 11th [[Zoom Link]]()
 ```{r}
 kable(sep11) %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
@@ -62,7 +65,7 @@ kable(sep11) %>%
 
 <br>
 
-# Friday September 18th [[Zoom Link]]()
+## Friday September 18th [[Zoom Link]]()
 ```{r}
 kable(sep18) %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
@@ -75,7 +78,7 @@ kable(sep18) %>%
 
 <br>
 
-# Friday September 25th [[Zoom Link]]()
+## Friday September 25th [[Zoom Link]]()
 ```{r}
 kable(sep25) %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
