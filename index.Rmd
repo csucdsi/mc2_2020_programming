@@ -33,9 +33,9 @@ The CSU Math Council Colloquia (MC$^2$) series provides CSU faculty in mathemati
 
 <br>
 
-## Friday September 4th [[Zoom Link]]()
+## Friday September 4th [[Zoom Link]](`r na.omit(sep04$Zoom)[1]`)
 ```{r}
-kable(sep04) %>% 
+sep04 %>% select(-Zoom) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
@@ -46,9 +46,9 @@ kable(sep04) %>%
 
 <br>
 
-## Friday September 11th [[Zoom Link]]()
+## Friday September 11th [[Zoom Link]](`r na.omit(sep11$Zoom)[1]`)
 ```{r}
-kable(sep11) %>% 
+sep11 %>% select(-Zoom) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
@@ -59,9 +59,9 @@ kable(sep11) %>%
 
 <br>
 
-## Friday September 18th [[Zoom Link]]()
+## Friday September 18th [[Zoom Link]](`r na.omit(sep18$Zoom)[1]`)
 ```{r}
-kable(sep18) %>% 
+sep18 %>% select(-Zoom) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
@@ -72,9 +72,9 @@ kable(sep18) %>%
 
 <br>
 
-## Friday September 25th [[Zoom Link]]()
+## Friday September 25th [[Zoom Link]](`r na.omit(sep25$Zoom)[1]`)
 ```{r}
-kable(sep25) %>% 
+sep25 %>% select(-Zoom) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
