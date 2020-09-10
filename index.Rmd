@@ -1,5 +1,4 @@
 ---
-title: "Computational Methods & Programming for Math & Stats Majors"
 output:
   html_document:
     toc: no
@@ -18,18 +17,33 @@ raw <- read_sheet("https://docs.google.com/spreadsheets/d/1MJG0lwuE9f03LXEtaH53j
                Affiliation = sprintf("[%s](%s)", Affiliation, webpage)) %>% 
         select(-Date, -`Confirmed?`, -Email, -webpage) %>%
         relocate(c(Time,Name), .before=1)
-        
+
 
 sep04 <- filter(raw, dt=="2020-09-04") %>% select(-dt) %>% arrange(Time)
 sep11 <- filter(raw, dt=="2020-09-11") %>% select(-dt) %>% arrange(Time)
 sep18 <- filter(raw, dt=="2020-09-18") %>% select(-dt) %>% arrange(Time)
 sep25 <- filter(raw, dt=="2020-09-25") %>% select(-dt) %>% arrange(Time)
+
+oct02 <- filter(raw, dt=="2020-10-02") %>% select(-dt) %>% arrange(Time)
+oct16 <- filter(raw, dt=="2020-10-16") %>% select(-dt) %>% arrange(Time)
 ```
 <br>
 
-The CSU Math Council Colloquia (MC$^2$) series provides CSU faculty in mathematics, statistics, and mathematics education with the opportunity to network and share best practices in any topics related to university level mathematics and statistics education.  For the September 2020 MC$^2$, faculty across the CSU share their insights and experiences with incorporating software and/or programming into courses for math and stats undergraduate majors.
+The CSU Math Council Colloquia (MC$^2$) series provides CSU faculty in mathematics, statistics, and mathematics education with the opportunity to network and share best practices in any topics related to university level mathematics and statistics education.  
+
+<br>
 
 ----
+
+# September: Computational Methods & Programming for Math & Stats Majors
+
+For the September 2020 MC$^2$, faculty across the CSU share their insights and experiences with incorporating software and/or programming into courses for math and stats undergraduate majors.
+
+Hosts: 
+
+* **Berit Givens**, Professor & Chair Department of Mathematics & Statistics, Cal Poly Pomona. bngivens@cpp.edu
+* **Robin Donatello**, Associate Professor of Statistics, Department of Mathematics & Statistics; Data Science Program Coordinator, Cal State Chico. rdonatello@csuchico.edu
+
 
 <br>
 
@@ -39,9 +53,9 @@ sep04 %>% select(-Zoom) %>% kable() %>%
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
-  column_spec(3, width = "10%") %>%
-  column_spec(4, width = "20%") %>% 
-  column_spec(5, width = "30%")
+  column_spec(3, width = "5%") %>%
+  column_spec(4, width = "10%") %>% 
+  column_spec(5, width = "35%")
 ```
 
 <br>
@@ -52,9 +66,9 @@ sep11 %>% select(-Zoom) %>% kable() %>%
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
-  column_spec(3, width = "10%") %>%
-  column_spec(4, width = "20%") %>% 
-  column_spec(5, width = "30%")
+  column_spec(3, width = "5%") %>%
+  column_spec(4, width = "10%") %>% 
+  column_spec(5, width = "35%")
 ```
 
 <br>
@@ -65,9 +79,9 @@ sep18 %>% select(-Zoom) %>% kable() %>%
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
-  column_spec(3, width = "10%") %>%
-  column_spec(4, width = "20%") %>% 
-  column_spec(5, width = "30%")
+  column_spec(3, width = "5%") %>%
+  column_spec(4, width = "10%") %>% 
+  column_spec(5, width = "35%")
 ```
 
 <br>
@@ -78,16 +92,44 @@ sep25 %>% select(-Zoom) %>% kable() %>%
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
-  column_spec(3, width = "10%") %>%
-  column_spec(4, width = "20%") %>% 
-  column_spec(5, width = "30%")
+  column_spec(3, width = "5%") %>%
+  column_spec(4, width = "10%") %>% 
+  column_spec(5, width = "35%")
 ```
 
 
 <hr>
 
-### Hosts: 
+# October: 
 
-* **Berit Givens**, Professor & Chair Department of Mathematics & Statistics, Cal Poly Pomona. bngivens@cpp.edu
-* **Robin Donatello**, Associate Professor of Statistics, Department of Mathematics & Statistics; Data Science Program Coordinator, Cal State Chico. rdonatello@csuchico.edu
+#### Hosts: 
+
+* Alfonso Agnew, CSU Fullerton
+
+
+## Friday October 2nd [[Zoom Link]](`r na.omit(oct02$Zoom)[1]`)
+```{r}
+oct02 %>% select(-Zoom) %>% kable() %>% 
+  kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
+  column_spec(1, width = "5%") %>% 
+  column_spec(2, width = "10%") %>%
+  column_spec(3, width = "5%") %>%
+  column_spec(4, width = "10%") %>% 
+  column_spec(5, width = "35%")
+```
+
+## Friday October 16th [[Zoom Link]](`r na.omit(oct16$Zoom)[1]`)
+```{r}
+oct16 %>% select(-Zoom) %>% kable() %>% 
+  kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
+  column_spec(1, width = "5%") %>% 
+  column_spec(2, width = "10%") %>%
+  column_spec(3, width = "5%") %>%
+  column_spec(4, width = "10%") %>% 
+  column_spec(5, width = "35%")
+```
+
+
+
+
 
