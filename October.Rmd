@@ -1,5 +1,5 @@
 ---
-title: "September Presentations"
+title: "October Presentations"
 output:
   html_document:
     toc: no
@@ -18,34 +18,25 @@ raw <- read_sheet("https://docs.google.com/spreadsheets/d/1MJG0lwuE9f03LXEtaH53j
                Affiliation = sprintf("[%s](%s)", Affiliation, webpage)) %>% 
         select(-Date, -`Confirmed?`, -Email, -webpage) %>%
         relocate(c(Time,Name), .before=1)
-
-
-sep04 <- filter(raw, dt=="2020-09-04") %>% select(-dt) %>% arrange(Time)
-sep11 <- filter(raw, dt=="2020-09-11") %>% select(-dt) %>% arrange(Time)
-sep18 <- filter(raw, dt=="2020-09-18") %>% select(-dt) %>% arrange(Time)
-sep25 <- filter(raw, dt=="2020-09-25") %>% select(-dt) %>% arrange(Time)
-
+oct02 <- filter(raw, dt=="2020-10-02") %>% select(-dt) %>% arrange(Time)
+oct16 <- filter(raw, dt=="2020-10-16") %>% select(-dt) %>% arrange(Time)
+oct23 <- filter(raw, dt=="2020-10-23") %>% select(-dt) %>% arrange(Time)
+oct30 <- filter(raw, dt=="2020-10-30") %>% select(-dt) %>% arrange(Time)
 ```
 
 > The CSU Math Council Colloquia (MC$^2$) series provides CSU faculty in mathematics, statistics, and mathematics education with the opportunity to network and share best practices in any topics related to university level mathematics and statistics education.
 
 ----
 
-# Computational Methods & Programming for Math & Stats Majors
+# Innovation in the Math Major Curriculum
 
-For the September 2020 MC$^2$, faculty across the CSU share their insights and experiences with incorporating software and/or programming into courses for math and stats undergraduate majors.
+#### Hosts: 
 
-Hosts: 
+* Alfonso Agnew, Professor & Chair Department of Mathematics, CSU Fullerton,  aagnew@rullerton.edu
 
-* **Berit Givens**, Professor & Chair Department of Mathematics & Statistics, Cal Poly Pomona. bngivens@cpp.edu
-* **Robin Donatello**, Associate Professor of Statistics, Department of Mathematics & Statistics; Data Science Program Coordinator, Cal State Chico. rdonatello@csuchico.edu
-
-
-<br>
-
-## Friday September 4th [[Zoom Link]](`r na.omit(sep04$Zoom)[1]`)
+## Friday October 2nd [[Zoom Link]](`r na.omit(oct02$Zoom)[1]`)
 ```{r}
-sep04 %>% select(-Zoom) %>% kable() %>% 
+oct02 %>% select(-Zoom) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
@@ -54,11 +45,11 @@ sep04 %>% select(-Zoom) %>% kable() %>%
   column_spec(5, width = "35%")
 ```
 
-<br>
+<br> 
 
-## Friday September 11th [[Zoom Link]](`r na.omit(sep11$Zoom)[1]`)
+## Friday October 16th [[Zoom Link]](`r na.omit(oct16$Zoom)[1]`)
 ```{r}
-sep11 %>% select(-Zoom) %>% kable() %>% 
+oct16 %>% select(-Zoom) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
@@ -67,11 +58,12 @@ sep11 %>% select(-Zoom) %>% kable() %>%
   column_spec(5, width = "35%")
 ```
 
-<br>
+<br> 
 
-## Friday September 18th [[Zoom Link]](`r na.omit(sep18$Zoom)[1]`)
+<!---
+## Friday October 23rd [[Zoom Link]](`r na.omit(oct23$Zoom)[1]`)
 ```{r}
-sep18 %>% select(-Zoom) %>% kable() %>% 
+oct23 %>% select(-Zoom) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
@@ -80,11 +72,11 @@ sep18 %>% select(-Zoom) %>% kable() %>%
   column_spec(5, width = "35%")
 ```
 
-<br>
+<br> 
 
-## Friday September 25th [[Zoom Link]](`r na.omit(sep25$Zoom)[1]`)
+## Friday October 30th [[Zoom Link]](`r na.omit(oct30$Zoom)[1]`)
 ```{r}
-sep25 %>% select(-Zoom) %>% kable() %>% 
+oct30 %>% select(-Zoom) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
@@ -92,5 +84,8 @@ sep25 %>% select(-Zoom) %>% kable() %>%
   column_spec(4, width = "10%") %>% 
   column_spec(5, width = "35%")
 ```
+
+--->
+
 
 

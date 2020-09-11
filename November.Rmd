@@ -1,0 +1,45 @@
+---
+title: "November presentations"
+output:
+  html_document:
+    toc: no
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(googlesheets4); library(dplyr)
+library(kableExtra); library(lubridate)
+
+options(knitr.table.format = "html", knitr.kable.NA = '') 
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE) 
+
+raw <- read_sheet("https://docs.google.com/spreadsheets/d/1MJG0lwuE9f03LXEtaH53j-uJGHwAsAO1ckP_jDAm0gY/edit#gid=1389752095") %>%
+        mutate(dt = date(Date), 
+               Name = paste(Name, sprintf("[%s](mailto:%s)", Email, Email)), 
+               Affiliation = sprintf("[%s](%s)", Affiliation, webpage)) %>% 
+        select(-Date, -`Confirmed?`, -Email, -webpage) %>%
+        relocate(c(Time,Name), .before=1)
+
+
+nov06 <- filter(raw, dt=="2020-11-06") %>% select(-dt) %>% arrange(Time)
+nov13 <- filter(raw, dt=="2020-11-13") %>% select(-dt) %>% arrange(Time)
+nov20 <- filter(raw, dt=="2020-11-20") %>% select(-dt) %>% arrange(Time)
+nov27 <- filter(raw, dt=="2020-11-27") %>% select(-dt) %>% arrange(Time)
+
+```
+
+> The CSU Math Council Colloquia (MC$^2$) series provides CSU faculty in mathematics, statistics, and mathematics education with the opportunity to network and share best practices in any topics related to university level mathematics and statistics education.
+
+----
+
+
+----
+
+# Theme & abstracts tbd
+
+Hosts: 
+
+* **Rick Ford**, Professor, Department of Mathematics & Statistics, Cal State Chico. rford@csuchico.edu
+
+
+
+
