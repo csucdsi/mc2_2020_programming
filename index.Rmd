@@ -1,4 +1,5 @@
 ---
+title: "Welcome"
 output:
   html_document:
     toc: no
@@ -27,15 +28,13 @@ sep25 <- filter(raw, dt=="2020-09-25") %>% select(-dt) %>% arrange(Time)
 oct02 <- filter(raw, dt=="2020-10-02") %>% select(-dt) %>% arrange(Time)
 oct16 <- filter(raw, dt=="2020-10-16") %>% select(-dt) %>% arrange(Time)
 ```
-<br>
 
-The CSU Math Council Colloquia (MC$^2$) series provides CSU faculty in mathematics, statistics, and mathematics education with the opportunity to network and share best practices in any topics related to university level mathematics and statistics education.  
-
-<br>
+> The CSU Math Council Colloquia (MC$^2$) series provides CSU faculty in mathematics, statistics, and mathematics education with the opportunity to network and share best practices in any topics related to university level mathematics and statistics education.
 
 ----
 
-# September: Computational Methods & Programming for Math & Stats Majors
+# September {#september}
+## - Computational Methods & Programming for Math & Stats Majors
 
 For the September 2020 MC$^2$, faculty across the CSU share their insights and experiences with incorporating software and/or programming into courses for math and stats undergraduate majors.
 
@@ -97,15 +96,17 @@ sep25 %>% select(-Zoom) %>% kable() %>%
   column_spec(5, width = "35%")
 ```
 
+<br> 
 
 <hr>
 
-# October: 
+
+# October {#october}
+## - Innovation in the Math Major Curriculum
 
 #### Hosts: 
 
-* Alfonso Agnew, CSU Fullerton
-
+* Alfonso Agnew, Professor & Chair Department of Mathematics, CSU Fullerton,  aagnew@rullerton.edu
 
 ## Friday October 2nd [[Zoom Link]](`r na.omit(oct02$Zoom)[1]`)
 ```{r}

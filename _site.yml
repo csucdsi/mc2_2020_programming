@@ -2,7 +2,11 @@ name: "MC2"
 output_dir: "."
 navbar:
   title: "Math Council Colloqium: Fall 2020 Presentations"
-
+  right: 
+  - text: "September"
+    href: https://csucdsi.github.io/mc2_2020_programming/#september
+  - text: "October"
+    href: https://csucdsi.github.io/mc2_2020_programming/#october
 
 
 output:
