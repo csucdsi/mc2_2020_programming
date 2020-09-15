@@ -32,7 +32,7 @@ oct30 <- filter(raw, dt=="2020-10-30") %>% select(-dt) %>% arrange(Time)
 
 #### Hosts: 
 
-* Alfonso Agnew, Professor & Chair Department of Mathematics, CSU Fullerton,  aagnew@rullerton.edu
+* Alfonso Agnew, Professor & Chair Department of Mathematics, CSU Fullerton,  aagnew@fullerton.edu
 
 ## Friday October 2nd [[Zoom Link]](`r na.omit(oct02$Zoom)[1]`)
 ```{r}
