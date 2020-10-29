@@ -35,6 +35,7 @@ nov20 <- filter(raw, dt=="2020-11-20") %>% select(-dt) %>% arrange(Time)
 Hosts: 
 
 * **Rick Ford**, Professor, Department of Mathematics & Statistics, Cal State Chico. rford@csuchico.edu
+* **Claudia M Bertolone-Smith **, Assistant Professor, School of Education, Cal State Chico. cmbertolone-smith@csuchico.edu 
 
 ----
 
