@@ -54,6 +54,9 @@ nov06 %>% select(-Zoom) %>% kable() %>%
 <br> 
 
 ## Friday November 13th [[Zoom Link]](`r na.omit(nov13$Zoom)[1]`)
+
+[[Recorded Session]](https://fullerton.zoom.us/rec/share/OY0P1UU48XzLxz0Uc97nIGoJBXCfF0gy7uihk62dC5oCgSsdLXUAD-BVAr-POYs.TiIolCdcOqA0lb-2) Passcode: `=9CfTcK!`
+
 ```{r nov13}
 nov13 %>% select(-Zoom) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
@@ -66,7 +69,8 @@ nov13 %>% select(-Zoom) %>% kable() %>%
 
 <br> 
 
-## Friday November 20th [[Zoom Link]](`r na.omit(nov20$Zoom)[1]`)
+## Friday November 20th [[Zoom Link]](`r na.omit(nov20$Zoom)[1]`) 
+[[Recorded Session]](https://media.csuchico.edu/media/Issues+in+Math+Education+for+Preparing+Teachers+%28November+20th%2C+2020+Recording%29/1_rvf06nfs)
 ```{r nov20}
 nov20 %>% select(-Zoom) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
