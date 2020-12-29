@@ -3,12 +3,16 @@ output_dir: "."
 navbar:
   title: "Math Council Fall 2020 Colloqium"
   right: 
-  - text: "September"
+  - text: "January"
     href: index.html
-  - text: "October"
-    href: October.html
-  - text: "November"
-    href: November.html
+  - text: "Fall talks"
+    menu:
+    - text: "November"
+      href: November.html
+    - text: "October"
+      href: October.html
+    - text: "September"
+      href: September.html
 
 
 output:

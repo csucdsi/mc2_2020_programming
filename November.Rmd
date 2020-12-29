@@ -16,7 +16,7 @@ raw <- read_sheet("https://docs.google.com/spreadsheets/d/1MJG0lwuE9f03LXEtaH53j
         mutate(dt = date(Date), 
                Name = paste(Name, sprintf("[%s](mailto:%s)", Email, Email)), 
                Affiliation = ifelse(!is.na(webpage), sprintf("[%s](%s)", Affiliation, webpage), Affiliation)) %>% 
-        select(-Date, -`Confirmed?`, -Email, -webpage, -recording) %>%
+        select(-Date, -`Confirmed?`, -Email, -webpage) %>%
         relocate(c(Time,Name), .before=1)
 
 
@@ -42,7 +42,7 @@ Hosts:
 
 ## Friday November 6th [[Zoom Link]](`r na.omit(nov06$Zoom)[1]`)
 ```{r nov06}
-nov06 %>% select(-Zoom) %>% kable() %>% 
+nov06 %>% select(-Zoom, -recording) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
@@ -53,12 +53,11 @@ nov06 %>% select(-Zoom) %>% kable() %>%
 
 <br> 
 
-## Friday November 13th [[Zoom Link]](`r na.omit(nov13$Zoom)[1]`)
-
-[[Recorded Session]](https://fullerton.zoom.us/rec/share/OY0P1UU48XzLxz0Uc97nIGoJBXCfF0gy7uihk62dC5oCgSsdLXUAD-BVAr-POYs.TiIolCdcOqA0lb-2) Passcode: `=9CfTcK!`
+## Friday November 13th [[Zoom Link]](`r na.omit(nov13$Zoom)[1]`) [[Recording]](`r na.omit(nov13$recording)[1]`) 
+Recorded Session Passcode: `=9CfTcK!`
 
 ```{r nov13}
-nov13 %>% select(-Zoom) %>% kable() %>% 
+nov13 %>% select(-Zoom, -recording) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
@@ -69,10 +68,10 @@ nov13 %>% select(-Zoom) %>% kable() %>%
 
 <br> 
 
-## Friday November 20th [[Zoom Link]](`r na.omit(nov20$Zoom)[1]`) 
-[[Recorded Session]](https://media.csuchico.edu/media/Issues+in+Math+Education+for+Preparing+Teachers+%28November+20th%2C+2020+Recording%29/1_rvf06nfs)
+## Friday November 20th [[Zoom Link]](`r na.omit(nov20$Zoom)[1]`) [[Recording]](`r na.omit(nov20$recording)[1]`) 
+
 ```{r nov20}
-nov20 %>% select(-Zoom) %>% kable() %>% 
+nov20 %>% select(-Zoom, -recording) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%

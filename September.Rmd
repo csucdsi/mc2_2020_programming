@@ -1,5 +1,5 @@
 ---
-title: "January Presentations"
+title: "September Presentations"
 output:
   html_document:
     toc: no
@@ -15,15 +15,16 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
 raw <- read_sheet("https://docs.google.com/spreadsheets/d/1MJG0lwuE9f03LXEtaH53j-uJGHwAsAO1ckP_jDAm0gY/edit#gid=1389752095", 
                   col_types="ccccccDcccc") %>%
         mutate(dt = date(Date), 
-               Name = paste(Name, sprintf("[%s](mailto:%s)", Email, Email))) %>% 
-        select(-Date, -`Confirmed?`, -Email, -webpage) %>%
+               Name = paste(Name, sprintf("[%s](mailto:%s)", Email, Email)), 
+               Affiliation = sprintf("[%s](%s)", Affiliation, webpage)) %>% 
+        select(-Date, -`Confirmed?`, -Email, -webpage, -recording) %>%
         relocate(c(Time,Name), .before=1)
 
 
-jan08 <- filter(raw, dt=="2021-01-08") %>% select(-dt) %>% arrange(Time)
-jan15 <- filter(raw, dt=="2021-01-15") %>% select(-dt) %>% arrange(Time)
-jan22 <- filter(raw, dt=="2021-01-22") %>% select(-dt) %>% arrange(Time)
-jan29 <- filter(raw, dt=="2021-01-29") %>% select(-dt) %>% arrange(Time)
+sep04 <- filter(raw, dt=="2020-09-04") %>% select(-dt) %>% arrange(Time)
+sep11 <- filter(raw, dt=="2020-09-11") %>% select(-dt) %>% arrange(Time)
+sep18 <- filter(raw, dt=="2020-09-18") %>% select(-dt) %>% arrange(Time)
+sep25 <- filter(raw, dt=="2020-09-25") %>% select(-dt) %>% arrange(Time)
 
 ```
 
@@ -31,21 +32,21 @@ jan29 <- filter(raw, dt=="2021-01-29") %>% select(-dt) %>% arrange(Time)
 
 ----
 
-# Peer Instruction and Tutoring
+# Computational Methods & Programming for Math & Stats Majors
 
-We hope to connect faculty and staff across the CSU who work on providing academic support services to students in mathematics and statistics courses.  In addition to the talks, we're interested in collecting some information on the structure of the tutoring and peer instruction on the various campuses.
+For the September 2020 MC$^2$, faculty across the CSU share their insights and experiences with incorporating software and/or programming into courses for math and stats undergraduate majors.
 
 Hosts: 
 
-* **Bori Mazzag**, Professor & Chair of the Department of Mathematics & Computer Scieence, Humboldt State University. borbala.mazzag@humboldt.edu
-* **Julie Glass**, Professor & Chair of the Department of Mathematics; CSU East Bay. julie.glass@csueastbay.edu
+* **Berit Givens**, Professor & Chair Department of Mathematics & Statistics, Cal Poly Pomona. bngivens@cpp.edu
+* **Robin Donatello**, Associate Professor of Statistics, Department of Mathematics & Statistics; Data Science Program Coordinator, Cal State Chico. rdonatello@csuchico.edu
 
 
 <br>
 
-## Friday January 8th [[Zoom Link]](`r na.omit(jan08$Zoom)[1]`)
+## Friday September 4th [[Zoom Link]](`r na.omit(sep04$Zoom)[1]`)
 ```{r}
-jan08 %>% select(-Zoom, -recording) %>% kable() %>% 
+sep04 %>% select(-Zoom) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
@@ -56,11 +57,9 @@ jan08 %>% select(-Zoom, -recording) %>% kable() %>%
 
 <br>
 
-<!---
-
-## Friday January 15th [[Zoom Link]](`r na.omit(jan15$Zoom)[1]`)
+## Friday September 11th [[Zoom Link]](`r na.omit(sep11$Zoom)[1]`)
 ```{r}
-jan15 %>% select(-Zoom, -recording) %>% kable() %>% 
+sep11 %>% select(-Zoom) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
@@ -71,9 +70,9 @@ jan15 %>% select(-Zoom, -recording) %>% kable() %>%
 
 <br>
 
-## Friday January 22nd [[Zoom Link]](`r na.omit(jan22$Zoom)[1]`)
+## Friday September 18th [[Zoom Link]](`r na.omit(sep18$Zoom)[1]`)
 ```{r}
-jan22 %>% select(-Zoom, -recording) %>% kable() %>% 
+sep18 %>% select(-Zoom) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
@@ -84,9 +83,9 @@ jan22 %>% select(-Zoom, -recording) %>% kable() %>%
 
 <br>
 
-## Friday January 29th [[Zoom Link]](`r na.omit(jan29$Zoom)[1]`)
+## Friday September 25th [[Zoom Link]](`r na.omit(sep25$Zoom)[1]`)
 ```{r}
-jan29 %>% select(-Zoom, -recording) %>% kable() %>% 
+sep25 %>% select(-Zoom) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
@@ -95,4 +94,4 @@ jan29 %>% select(-Zoom, -recording) %>% kable() %>%
   column_spec(5, width = "35%")
 ```
 
---->
+
