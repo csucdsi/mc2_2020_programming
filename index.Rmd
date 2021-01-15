@@ -68,8 +68,6 @@ jan15 %>% select(-Zoom, -recording) %>% kable() %>%
 ```
 
 
-<!---
-
 <br>
 
 ## Friday January 22nd [[Zoom Link]](`r na.omit(jan22$Zoom)[1]`)
@@ -82,6 +80,8 @@ jan22 %>% select(-Zoom, -recording) %>% kable() %>%
   column_spec(4, width = "10%") %>% 
   column_spec(5, width = "35%")
 ```
+
+<!---
 
 <br>
 
