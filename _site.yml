@@ -5,6 +5,8 @@ navbar:
   right: 
   - text: "January"
     href: index.html
+  - text: "February"
+    href: February.html
   - text: "Fall talks"
     menu:
     - text: "November"

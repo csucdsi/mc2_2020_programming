@@ -1,5 +1,5 @@
 ---
-title: "January Presentations"
+title: "February presentations"
 output:
   html_document:
     toc: no
@@ -12,18 +12,17 @@ library(kableExtra); library(lubridate)
 options(knitr.table.format = "html", knitr.kable.NA = '') 
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE) 
 
-raw <- read_sheet("https://docs.google.com/spreadsheets/d/1MJG0lwuE9f03LXEtaH53j-uJGHwAsAO1ckP_jDAm0gY/edit#gid=1389752095", 
-                  col_types="ccccccDcccc") %>%
+raw <- read_sheet("https://docs.google.com/spreadsheets/d/1MJG0lwuE9f03LXEtaH53j-uJGHwAsAO1ckP_jDAm0gY") %>%
         mutate(dt = date(Date), 
-               Name = paste(Name, sprintf("[%s](mailto:%s)", Email, Email))) %>% 
+               Name = paste(Name, sprintf("[%s](mailto:%s)", Email, Email)), 
+               Affiliation = ifelse(!is.na(webpage), sprintf("[%s](%s)", Affiliation, webpage), Affiliation)) %>% 
         select(-Date, -`Confirmed?`, -Email, -webpage) %>%
         relocate(c(Time,Name), .before=1)
 
 
-wk1 <- filter(raw, dt=="2021-01-08") %>% arrange(Time)
-wk2 <- filter(raw, dt=="2021-01-15") %>% arrange(Time)
-wk3 <- filter(raw, dt=="2021-01-22") %>% arrange(Time)
-wk4 <- filter(raw, dt=="2021-01-29") %>% arrange(Time)
+wk1 <- filter(raw, dt=="2021-02-05") %>% arrange(Time)
+wk2 <- filter(raw, dt=="2021-02-12") %>% arrange(Time)
+wk3 <- filter(raw, dt=="2021-02-19") %>% arrange(Time)
 
 ```
 
@@ -31,19 +30,18 @@ wk4 <- filter(raw, dt=="2021-01-29") %>% arrange(Time)
 
 ----
 
-# Peer Instruction and Tutoring
-
-We hope to connect faculty and staff across the CSU who work on providing academic support services to students in mathematics and statistics courses.  In addition to the talks, we're interested in collecting some information on the structure of the tutoring and peer instruction on the various campuses.
+# Data Science across the CSU: Programs, Courses, and Literacy
+These talks will afford a wonderful opportunity to learn more about how each of our campuses is embracing data science education as well as create opportunities for collaboration across the CSU.
 
 Hosts: 
 
-* **Bori Mazzag**, Professor & Chair of the Department of Mathematics & Computer Scieence, Humboldt State University. borbala.mazzag@humboldt.edu
-* **Julie Glass**, Professor & Chair of the Department of Mathematics; CSU East Bay. julie.glass@csueastbay.edu
+* **Andrew Schaffner**, Professor and Chair; Statistics Department; Cal Poly, San Luis Obispo (aschaffn@calpoly.edu)
 
+----
 
-<br>
 
 ## `r format(wk1$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk1$Zoom)[1]`)
+
 ```{r, wk1}
 wk1 %>% select(-Zoom, -recording, -dt) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
@@ -54,7 +52,7 @@ wk1 %>% select(-Zoom, -recording, -dt) %>% kable() %>%
   column_spec(5, width = "35%")
 ```
 
-<br>
+<br> 
 
 ## `r format(wk2$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk2$Zoom)[1]`)
 
@@ -68,27 +66,12 @@ wk2 %>% select(-Zoom, -recording, -dt) %>% kable() %>%
   column_spec(5, width = "35%")
 ```
 
-
-<br>
+<br> 
 
 ## `r format(wk3$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk3$Zoom)[1]`)
 
 ```{r wk3}
 wk3 %>% select(-Zoom, -recording, -dt) %>% kable() %>% 
-  kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
-  column_spec(1, width = "5%") %>% 
-  column_spec(2, width = "10%") %>%
-  column_spec(3, width = "5%") %>%
-  column_spec(4, width = "10%") %>% 
-  column_spec(5, width = "35%")
-```
-
-<br>
-
-## `r format(wk4$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk4$Zoom)[1]`)
-
-```{r wk4}
-wk4 %>% select(-Zoom, -recording, -dt) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
   column_spec(1, width = "5%") %>% 
   column_spec(2, width = "10%") %>%
