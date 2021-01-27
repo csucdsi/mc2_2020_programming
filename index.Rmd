@@ -43,7 +43,7 @@ Hosts:
 
 <br>
 
-## `r format(wk1$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk1$Zoom)[1]`)
+## `r format(wk1$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk1$Zoom)[1]`)  [[Recording]](`r na.omit(wk1$recording)[1]`) 
 ```{r, wk1}
 wk1 %>% select(-Zoom, -recording, -dt) %>% kable() %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>%  
@@ -56,7 +56,7 @@ wk1 %>% select(-Zoom, -recording, -dt) %>% kable() %>%
 
 <br>
 
-## `r format(wk2$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk2$Zoom)[1]`)
+## `r format(wk2$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk2$Zoom)[1]`)[[Recording]](`r na.omit(wk2$recording)[1]`) 
 
 ```{r wk2}
 wk2 %>% select(-Zoom, -recording, -dt) %>% kable() %>% 
@@ -71,7 +71,7 @@ wk2 %>% select(-Zoom, -recording, -dt) %>% kable() %>%
 
 <br>
 
-## `r format(wk3$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk3$Zoom)[1]`)
+## `r format(wk3$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk3$Zoom)[1]`)[[Recording]](`r na.omit(wk3$recording)[1]`) 
 
 ```{r wk3}
 wk3 %>% select(-Zoom, -recording, -dt) %>% kable() %>% 
@@ -85,7 +85,7 @@ wk3 %>% select(-Zoom, -recording, -dt) %>% kable() %>%
 
 <br>
 
-## `r format(wk4$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk4$Zoom)[1]`)
+## `r format(wk4$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk4$Zoom)[1]`)[[Recording]](`r na.omit(wk4$recording)[1]`) 
 
 ```{r wk4}
 wk4 %>% select(-Zoom, -recording, -dt) %>% kable() %>% 
