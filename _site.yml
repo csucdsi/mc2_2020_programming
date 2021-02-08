@@ -4,9 +4,11 @@ navbar:
   title: "Math Council Fall 2020 Colloqium"
   right: 
   - text: "January"
-    href: index.html
+    href: January.html
   - text: "February"
-    href: February.html
+    href: index.html
+  - text: "March"
+    href: March.html
   - text: "Fall talks"
     menu:
     - text: "November"
