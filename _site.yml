@@ -6,9 +6,9 @@ navbar:
   - text: "January"
     href: January.html
   - text: "February"
-    href: index.html
+    href: February.html
   - text: "March"
-    href: March.html
+    href: index.html
   - text: "Fall talks"
     menu:
     - text: "November"

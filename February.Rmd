@@ -1,11 +1,11 @@
 ---
-title: "March presentations"
+title: "February presentations"
 output:
   html_document:
     toc: no
 ---
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(googlesheets4); library(dplyr)
 library(kableExtra); library(lubridate)
 
@@ -20,9 +20,9 @@ raw <- read_sheet("https://docs.google.com/spreadsheets/d/1MJG0lwuE9f03LXEtaH53j
         relocate(c(Time,Name), .before=1)
 
 
-wk1 <- filter(raw, dt=="2021-03-05") %>% arrange(Time)
-wk2 <- filter(raw, dt=="2021-03-12") %>% arrange(Time)
-wk3 <- filter(raw, dt=="2021-03-19") %>% arrange(Time)
+wk1 <- filter(raw, dt=="2021-02-05") %>% arrange(Time)
+wk2 <- filter(raw, dt=="2021-02-12") %>% arrange(Time)
+wk3 <- filter(raw, dt=="2021-02-19") %>% arrange(Time)
 
 ```
 
@@ -30,18 +30,14 @@ wk3 <- filter(raw, dt=="2021-03-19") %>% arrange(Time)
 
 ----
 
-# Sustaining Quality Online Learning Through the Pandemic (and Beyond): Sharing Successes with Active Student Engagement.
-
-## Abstract
-Regardless of your experience teaching active student-centered classes, the shift to teaching active student-centered online classes during a global pandemic has presented new kinds of challenges for us all. Moreover, the flexibility afforded by online learning will likely lead to more demand for quality online instruction, so instructors will need the relevant skills in their toolkits even after our return to a new normal. Through a series of three interactive sessions we will explore strategies for responding to these challenges and supporting our students’ online learning through this troubling time and beyond.
-
+# Data Science across the CSU: Programs, Courses, and Literacy
+These talks will afford a wonderful opportunity to learn more about how each of our campuses is embracing data science education as well as create opportunities for collaboration across the CSU.
 
 Hosts: 
 
-* **Julia Olkin**, Professor; Mathematics Department; California State University, East Bay (julia.olkin@csueastbay.edu)
+* **Andrew Schaffner**, Professor and Chair; Statistics Department; Cal Poly, San Luis Obispo (aschaffn@calpoly.edu)
 
 ----
-
 
 
 ## `r format(wk1$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk1$Zoom)[1]`)[[Recording]](`r na.omit(wk1$recording)[1]`) 
@@ -83,3 +79,4 @@ wk3 %>% select(-Zoom, -recording, -dt) %>% kable() %>%
   column_spec(4, width = "10%") %>% 
   column_spec(5, width = "35%")
 ```
+

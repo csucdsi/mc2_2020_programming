@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>February presentations</title>
+
+<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Math Council Fall 2020 Colloqium</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="January.html">January</a>
+</li>
+<li>
+  <a href="February.html">February</a>
+</li>
+<li>
+  <a href="index.html">March</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Fall talks
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="November.html">November</a>
+    </li>
+    <li>
+      <a href="October.html">October</a>
+    </li>
+    <li>
+      <a href="September.html">September</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">February presentations</h1>
+
+</div>
+
+
+<blockquote>
+<p>The CSU Math Council Colloquia (MC<span class="math inline">\(^2\)</span>) series provides CSU faculty in mathematics, statistics, and mathematics education with the opportunity to network and share best practices in any topics related to university level mathematics and statistics education.</p>
+</blockquote>
+<hr />
+<div id="data-science-across-the-csu-programs-courses-and-literacy" class="section level1">
+<h1>Data Science across the CSU: Programs, Courses, and Literacy</h1>
+<p>These talks will afford a wonderful opportunity to learn more about how each of our campuses is embracing data science education as well as create opportunities for collaboration across the CSU.</p>
+<p>Hosts:</p>
+<ul>
+<li><strong>Andrew Schaffner</strong>, Professor and Chair; Statistics Department; Cal Poly, San Luis Obispo (<a href="mailto:aschaffn@calpoly.edu" class="email">aschaffn@calpoly.edu</a>)</li>
+</ul>
+<hr />
+<div id="friday-february-05-2021-zoom-linkrecording" class="section level2">
+<h2>Friday, February 05, 2021 <a href="https://calpoly.zoom.us/j/88326626295">[Zoom Link]</a><a href="https://calpoly.zoom.us/rec/share/-8x6TgduiXfwmx43hNFMc-SoJBj41N37xB5AicCVaTDSVe0ch0fmMMinZ5ZUoSwC.g-YxPRjFrsFuPjSY">[Recording]</a></h2>
+<table class="table table-hover table-striped table-responsive table-bordered" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Time
+</th>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Affiliation
+</th>
+<th style="text-align:left;">
+Title
+</th>
+<th style="text-align:left;">
+Abstract
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 5%; ">
+3:00 PM
+</td>
+<td style="text-align:left;width: 10%; ">
+Roberto (Bob) Pelayo <a href="mailto:rcpelayo@uci.edu">rcpelayo@uci.edu</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+UC Irvine
+</td>
+<td style="text-align:left;width: 10%; ">
+Three Models for Undergraduate Data Science Curricula
+</td>
+<td style="text-align:left;width: 35%; ">
+Data Science takes on many curricular forms at the undergraduate level. This diversity of pedagogical pathways reflects the versatility of the topic and institutional priorities. I am the Data Science advisor for the UC Irvine math concentration, and I previously created a cross-disciplinary Data Science program at the University or Hawai’i at Hilo. In this presentation, I will showcase three different curricula with which I’m involved: the UCI Math Data Science Concentration, the UCI (non-math) Data Science Bachelors of Science, and the UH Hilo Data science certificate program. Each of these have different flavors and emphases, and portray potential models for Data Science curricular development at other institutions. <a href="slides/2021-02-05%20Pelayo%20MC%5E2%20talk.pdf">[Slides]</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5%; ">
+3:30 PM
+</td>
+<td style="text-align:left;width: 10%; ">
+Hunter Glanz, Alex Dekhtyar, Dennis Sun <a href="mailto:hglanz@calpoly.edu">hglanz@calpoly.edu</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Cal Poly, San Luis Obispo
+</td>
+<td style="text-align:left;width: 10%; ">
+Cross-Disciplinary Studies Program in Data Science
+</td>
+<td style="text-align:left;width: 35%; ">
+As an inherently multi-disciplinary field, assembling a program in data science can involve many different constituencies and contributors. Consequently, ownership of the curriculum and participation in the courses could be unnecessarily complicated. While there are many successful degree programs in data science out there, we will discuss a newer and somewhat unique vehicle for such a wonderfully multi-disciplinary effort: the cross-disciplinary studies minor. <a href="slides/2021-02-05%20MC2_Glanz_DataScienceCDSM_Slides.pptx">[Slides]</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5%; ">
+4:00 PM
+</td>
+<td style="text-align:left;width: 10%; ">
+Cristina Tortora, Bem Cayco, Guangliang Chen <a href="mailto:cristina.tortora@sjsu.edu">cristina.tortora@sjsu.edu</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+San Jose State
+</td>
+<td style="text-align:left;width: 10%; ">
+MS in data science, a joint work of the Statistics and Computer Science departments
+</td>
+<td style="text-align:left;width: 35%; ">
+Data science is multidisciplinary in nature, requiring specialized knowledge and skills from mathematics, statistics, computer science, and the business domain. Offering such a degree at SJSU aligns well with its institutional learning outcomes in preparing students with specialized, applied, and integrative knowledge and skills. The new MS in Data science program is designed to address the vast shortage of data scientists in today’s job market by providing a technically rigorous and balanced data science education that trains students with solid mathematical, programming, data management, predictive modeling, and communication skills. The program combines the existing resources of both the Department of Mathematics and Statistics and the Department of Computer Science at San Jose State University by harnessing a wide array of courses already offered by the two departments and a broad scope of faculty expertise in mathematics, statistics, computer science, and their intersection, machine learning. In this talk we will describe the new program, emphasizing the strengths and the aspects that are unique about our program. <a href="slides/2021-02-05%20Tortora%20Three%20Models%20for%20Undergrad%20Data%20Science%20Curricula.pdf">[Slides]</a>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+<div id="friday-february-12-2021-zoom-linkrecording" class="section level2">
+<h2>Friday, February 12, 2021 <a href="https://calpoly.zoom.us/j/82637519740">[Zoom Link]</a><a href="https://calpoly.zoom.us/rec/play/qVoGLhufsUW3dLVZvHDw8ihbri_6WVX1TO2YsSbASn9NQKU15oTEL6Rmb-chP1Xh2EtCvyRriQWAMJxS.dkb5heiUarSe0JJW">[Recording]</a></h2>
+<table class="table table-hover table-striped table-responsive table-bordered" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Time
+</th>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Affiliation
+</th>
+<th style="text-align:left;">
+Title
+</th>
+<th style="text-align:left;">
+Abstract
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 5%; ">
+3:00 PM
+</td>
+<td style="text-align:left;width: 10%; ">
+Earvin Balderama <a href="mailto:earvin@csufresno.edu">earvin@csufresno.edu</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+CSU Fresno
+</td>
+<td style="text-align:left;width: 10%; ">
+Teaching Statistical Programming and Data Analysis with “Data Hospital”
+</td>
+<td style="text-align:left;width: 35%; ">
+Fresno State’s Statistical Programming &amp; Data Analysis course is taken mostly by MATH-Stats majors and minors, although students from other majors, such as Physics, Engineering, and even Sociology, have also taken this class. The course uses R/Rstudio and covers introductory data science topics such as data visualization, data wrangling, text mining, simulation and modeling. In this talk, I will discuss one of my favorite in-class activities: Data Hospital. This activity is designed after a teaching hospital, where attending physicians lead teams of residents and interns to learn about and care for patients. Small groups of students are assigned to different data sets, and are responsible for presenting an initial analysis to the class, receiving feedback, then presenting final results the following week. This active learning exercise promotes critical thinking, collaboration and communication. Within an encouraging and supportive atmosphere, students “learn by doing.” I will also discuss how I implemented this activity during face-to-face instruction, and also virtually through Zoom. <a href="slides/2021-02-12%20Earvin%20Balderama%20MC2.pdf">[Slides]</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5%; ">
+3:30 PM
+</td>
+<td style="text-align:left;width: 10%; ">
+Alexander Chen <a href="mailto:achen@csudh.edu">achen@csudh.edu</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+CSU Dominguez Hills
+</td>
+<td style="text-align:left;width: 10%; ">
+Leveraging beginning programming to introduce data science
+</td>
+<td style="text-align:left;width: 35%; ">
+The mathematics department at CSU Dominguez Hills is in the process of introducing a data science concentration. Some of the challenges include introducing related courses and raising awareness of data science as a career option. To this end, we have taken the opportunity to leverage existing courses and pushing them toward a more data science-oriented direction. One example is our introductory programming class for secondary school teachers. In this course, which has traditionally focused on basic programming and technologies, we have incorporated more real-world problems and modeling to excite student interest and help them understand the context and importance of programming. At the same time, the course will encourage students to take more data science course options that are being introduced at the upper division. <a href="slides/2021-02-12%20AlexChen_MC%5E2.pdf">[Slides]</a>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+<div id="friday-february-19-2021-zoom-linkrecording" class="section level2">
+<h2>Friday, February 19, 2021 <a href="https://calpoly.zoom.us/j/85283224245">[Zoom Link]</a><a href="https://calpoly.zoom.us/rec/play/4d_it7yANutdtJeLJC7_8QgEZ5svc9RZXaw4tbQtPfFnqi722uMGsRpFrzJOltxQJ_lIhmkd1RQZ5LW2.foRNB6EjDUkz-BcL">[Recording]</a></h2>
+<table class="table table-hover table-striped table-responsive table-bordered" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Time
+</th>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Affiliation
+</th>
+<th style="text-align:left;">
+Title
+</th>
+<th style="text-align:left;">
+Abstract
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 5%; ">
+3:00 PM
+</td>
+<td style="text-align:left;width: 10%; ">
+Allison Theobold, Kelly Bodwin <a href="mailto:atheobol@calpoly.edu">atheobol@calpoly.edu</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Cal Poly, San Luis Obispo
+</td>
+<td style="text-align:left;width: 10%; ">
+Tools for Integrating Data Science in the Introductory and Intermediate Statistics Classroom
+</td>
+<td style="text-align:left;width: 35%; ">
+In this presentation we will share tools which we have used to integrate data science concepts into Introductory and Intermediate Statistics courses. We will discuss tools and activities which scaffold student’s learning of programming in R, namely shiny apps, learnr tutorials, RStudio Cloud, and downloading R and RStudio locally.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5%; ">
+3:30 PM
+</td>
+<td style="text-align:left;width: 10%; ">
+Robin Donatello <a href="mailto:rdonatello@csuchico.edu">rdonatello@csuchico.edu</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="https://www.csuchico.edu/datascience/">CSU Chico</a>
+</td>
+<td style="text-align:left;width: 10%; ">
+Data Analytics for Social Good: An introduction to DS for all Freshman
+</td>
+<td style="text-align:left;width: 35%; ">
+This talk showcases a new class at Chico State called “Data Analytics for Social Good”. Inspired by Data8 at UC Berkeley, and the Data Studies program at UC Davis, this class represents our first attempt at introducing the concepts of Data Literacy, Science and Analytics into the general freshman population. With low floor and high ceiling learning outcomes, we attempt to give the students a chance to not only wrangle and visualize data, but also to wrestle with the downstream implications that every choice made during data preparation, visualization and analysis can have on those impacted by the data results. Students will practice collecting and wrangling data into a usable form, visualizing large data sets to discover patterns, representing data in a meaningful way, exploring varying interpretations of the data and results, and discussing potentials for misuse and abuse. This course promotes critical reflection on the ethical, social, cultural, and political dimensions of data as well as providing direct hands on experience with both spreadsheets, and the programming language R. <a href="slides/2021-02-19-Donatello-MC2-DATA-185.pdf">[Slides]</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5%; ">
+4:00 PM
+</td>
+<td style="text-align:left;width: 10%; ">
+Judith Canner <a href="mailto:jcanner@csumb.edu">jcanner@csumb.edu</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+CSU Monterey Bay
+</td>
+<td style="text-align:left;width: 10%; ">
+Integrating Data Science Across the Curriculum
+</td>
+<td style="text-align:left;width: 35%; ">
+Since 2015, we have been working to integrate data science across the curriculum within the college of science. Now, as we move towards the establishment of a Data Science Minor at CSUMB, we need to think about how to bring data science into the curriculum across campus. Just as statistics finds its home in many programs and departments, we need to think about how to embed data science in psychology, health sciences, business, and the even the humanities. The support of data science across the curriculum requires us to rethink how we offer our general education courses, how we structure prereqs, and even how we think about the traditional mathematics major. It also requires an evaluation of campus resources for how to support data science within the classroom. We will discuss how we have approached these issues at CSUMB, the barriers we still face, and ways we, as a CSU community, might approach these issues together. <a href="https://docs.google.com/presentation/d/17uIurvrrlz7vWj9M98Plyk2AfzQ-fhACOWcjva74ZCg/edit?usp=sharing">[Slides]</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<hr>
+<h2> Participating Institutions </h2>
+<a href="https://www.cpp.edu/sci/mathematics-statistics/index.shtml">
+  <img src="cpp.png" style="float: left; width: 6%; margin-right: 1%; margin-bottom: 0.5em;">
+</a>
+<a href="https://www.csuchico.edu/math/">
+  <img src="csuc.png" style="float: left; width: 10%; margin-right: 1%; margin-bottom: 0.5em;">
+</a>
+<a href="https://www.csuchico.edu/datascience/">
+  <img src="dsi.png" style="float: left; width: 10%; margin-right: 1%; margin-bottom: 0.5em;">
+</a>
+<a href="https://www.fullerton.edu/math/">
+  <img src="csuf.png" style="float: left; width: 5%; margin-right: 1%; margin-bottom: 0.5em;">
+</a>
+<a href="https://math.humboldt.edu/">
+  <img src="hsu.jpg" style="float: left; width: 10%; margin-right: 1%; margin-bottom: 0.5em;">
+</a>
+<a href="https://www.csueastbay.edu/math/">
+  <img src="csueb.png" style="float: left; width: 15%; margin-right: 1%; margin-bottom: 0.5em; margin-top: 3%">
+</a>
+<a href="https://statistics.calpoly.edu/">
+  <img src="slo.jpg" style="float: left; width: 15%; margin-right: 1%; margin-bottom: 0.5em; margin-top: 3%">
+</a>
+<p style="clear: both;">
+  
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
