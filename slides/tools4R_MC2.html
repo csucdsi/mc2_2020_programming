@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>🔨 Tools for Integrating Data Science in the Introductory and Intermediate Statistics Classroom</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="  🌈 Dr. Allison Theobold   🎲 Dr. Kelly Bodwin" />
+    <meta name="date" content="2021-02-19" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="slide-style.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# 🔨 Tools for Integrating Data Science in the Introductory and Intermediate Statistics Classroom
+## <br> 🔗 <a href="http://bit.ly/tools4ds">http://bit.ly/tools4ds</a>
+### <br> 🌈 Dr. Allison Theobold <br> 🎲 Dr. Kelly Bodwin
+### February 19, 2021
+
+---
+
+
+
+
+
+layout: true
+  
+&lt;div class="my-footer"&gt;
+&lt;span&gt;
+&lt;a href="http://bit.ly/tools4ds" target="_blank"&gt;&lt;b&gt;http://bit.ly/tools4ds&lt;/b&gt;&lt;/a&gt; - Dr. Allison Theobold &amp; Dr. Kelly Bodwin
+&lt;/span&gt;
+&lt;/div&gt; 
+---
+
+
+
+
+.huge-text[you...]
+
+.large[
+- know R
+- are familiar with R Markdown
+- are interested in integrating R into your course(s)
+]
+
+---
+
+class: middle, inverse
+
+.pull-left[
+  .huge-text[Tools]
+]
+.pull-right[
+.large[
+1. At-home Install
+2. RStudio Cloud
+3. Shiny Apps
+4. learnr Tutorials]
+]
+
+---
+
+class:center, inverse
+
+.huge-text[At-home Installs]
+
+---
+
+class: middle
+
+.pull-left[.bitlarger[Cautionary Tale 1:] 
+]
+
+.pull-right[
+  .large[
+Old versions of Mac]
+]
+
+* Most of what you want to teach will work with older versions of R...
+
+--
+
+* ... but earlier than **R 3.4** is a problem.
+
+--
+
+* **Solution**:  Have students on old machines use RS Cloud.
+
+---
+
+class: middle
+
+.pull-left[.bitlarger[Cautionary Tale 2:] 
+]
+
+.pull-right[
+  .large[
+Installing on any Mac]
+]
+
+
+&lt;img src="images/maxresdefault.jpg" width="75%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: middle
+
+.pull-left[.bitlarger[Cautionary Tale 3:] 
+]
+
+.pull-right[
+  .large[
+All the package headaches]
+]
+
+&lt;center&gt; 
+![](images/binaries.png)
+
+---
+
+class: middle
+
+.pull-left[.bitlarger[Cautionary Tale 3:] 
+]
+
+.pull-right[
+  .large[
+  Continued...]
+]
+
+Do you want to install from sources the package which needs compilation?
+
+--
+
+Do you want to install from **developer version** sources **as opposed to CRAN version** the package which needs compilation?
+
+--
+
+&lt;center&gt; 
+
+![](https://media1.giphy.com/media/8vUEXZA2me7vnuUvrs/200.gif)
+
+---
+
+class: middle
+
+.pull-left[.bitlarger[Cautionary Tale 3:] 
+]
+
+.pull-right[
+  .large[
+Continued...]
+]
+
+
+```r
+Error in loadNamespace(name) : there is no package called 'here'
+```
+
+or
+
+
+```r
+Error in library(here) : there is no package called 'here'
+```
+--
+
+* This means that a dependency didn't auto-install like it should have.
+
+--
+
+* Why?  
+
+--
+
+* No idea.  Just install the package directly
+
+
+```r
+install.packages("here")
+```
+
+---
+
+class: middle
+
+.pull-left[.bitlarger[Cautionary Tale 3:] 
+]
+
+.pull-right[
+  .large[
+Continued...]
+]
+
+
+```r
+Error: package or namespace load failed for 'tidyverse' in loadNamespace(j &lt;-
+i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]): namespace 'tibble' 
+2.1.3 is already loaded, but &gt;= 3.0.0 is required
+```
+
+--
+
+This means you're trying to update a package that's in use!
+
+--
+
+Clear out the **environment**, including "hidden objects"
+
+Close other R/RStudio windows.
+
+Try to install again.
+
+---
+
+class: middle
+
+.pull-left[.bitlarger[Cautionary Tale 4:] 
+]
+
+.pull-right[
+  .large[
+Gen Z doesn't understand folders]
+]
+
+Things I have seen students do...
+
+--
+
+* Download a dataset to a random folder, expect it to be read into R automatically.
+
+--
+
+* Never **save** or **knit** their R Markdown file.  Lose everything when something crashes.
+
+--
+
+* Re-download the lab every time they want to work on it, open it from their downloads folder, copy paste code from a Google Doc.
+
+--
+
+* Re-download R or RStudio every time they want to open it.
+
+---
+
+class: middle
+
+.pull-left[.bitlarger[Cautionary Tale 5:] 
+]
+
+.pull-right[
+  .large[
+Equality of assessment]
+]
+
+
+* Using a Studio computer means students taking exams out of their comfort zone...
+
+--
+
+* ... but troubleshooting individual laptops during an exam is impossible!
+
+--
+
+* Not all students can afford the most powerful computer.
+
+--
+
+* Not all students have a laptop computer they can bring to class.
+
+
+---
+
+class:center, inverse
+
+.huge-text[
+.rstudio-blue[RStudio Cloud]
+]
+
+---
+
+.pull-left[
+
+.large[**Lots of Friction**]
+
+- Install R
+- Install RStudio
+- Install the following packages:
+  - rmarkdown
+  - tidyverse 
+  - ...
+- Load these packages
+- Install git
+- Install MiKteX
+]
+
+--
+
+.pull-right[
+.large[**Less Friction**]
+
+- Go to rstudio.cloud
+- Log in
+
+
+```r
+&gt;hello R!
+```
+]
+
+.footnote[
+.small[
+__*__ Çetinkaya-Rundel, Mine. "Teaching R online with RStudio Cloud." [RStudio Webinar](https://rstudio.com/resources/webinars/teaching-r-online-with-rstudio-cloud/). 
+]
+]
+
+---
+
+class: center
+
+## What is RStudio Cloud?
+
+.pull-left-narrow[
+&lt;img src="images/cloud.png" width="264" /&gt;
+]
+
+.pull-right-wide[
+.large[We created [**RStudio Cloud**](https://rstudio.cloud/) to make it easy for professionals, hobbyists, trainers, teachers, and students to do, share, teach, and learn data science using R.]
+]
+
+---
+
+background-image: url(images/rstudio-annotated.jpg)
+background-position: center
+background-repeat: no-repeat
+background-size: 800px
+class: middle
+
+---
+
+background-image: url(images/cloud-annotated.jpg)
+background-position: center
+background-repeat: no-repeat
+background-size: 800px
+class: middle
+
+---
+
+## Workspaces
+
+&lt;!-- - When you create an account on RStudio Cloud you get a workspace of your own --&gt;
+
+&lt;!-- - You can add a new workspace and control its permissions --&gt;
+
+&lt;!-- - Projects in either workspace can be public or private --&gt;
+
+&lt;img src="images/cloud-workspaces.jpg" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: center
+
+## Projects
+
+.pull-left[
+&lt;/br&gt;
+A new project in RStudio Cloud
+&lt;img src="images/cloud-project.jpg" width="120%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+&lt;/br&gt;
+is a new project in RStudio IDE
+&lt;img src="images/rstudio-project.jpg" width="90%" style="display: block; margin: auto;" /&gt;
+]
+
+.alert[
+**PSA:** If you use RStudio, use projects! Trust me, you won’t regret it.
+]
+
+---
+
+## Sharing Options
+
+&lt;/br&gt; 
+
+- Option 1: Share a single project
+--
+
+- Option 2: Invite users to a workspace (presumably with many projects)
+
+---
+
+&lt;center&gt;
+
+.bitlarger[**Sharing a Single Project**]
+
+&lt;/center&gt;
+
+&lt;/br&gt;
+
+.pull-left[
+### Good!
+
+- Students land directly in a project upon login
+- Works well for workshops where all work will be completed in a single project
+- Also great for sharing code in general, e.g. collaboration, reprexes, etc.
+]
+
+--
+
+.pull-right[
+### Not so good...
+&lt;img src="images/cloud-copy.png" width="60%" style="display: block; margin: auto;" /&gt;
+- Students need to remember to make a copy of the project (which means you need to remember to remind them!)
+- You can't keep track which students started their assignment
+- You can't easily peek into student projects
+]
+
+---
+
+&lt;center&gt;
+
+.bitlarger[**Sharing a Workspace**]
+
+&lt;/center&gt;
+
+&lt;/br&gt;
+
+.pull-left[
+
+### Good!
+
+- Base projects with desired packages installed
+- Assignments -- no more "make a copy of the project before starting work"
+- Peek into students’ projects
+]
+
+--
+
+.pull-right[
+### Not so good...
+
+- Students land in the workspace, may need to provide instructions for the next steps
+- Git config for each project can get tedious and doesn't reflect realistic practice
+]
+
+---
+
+.large[
+.hand[Q: How do I access RStudio Cloud?]
+]
+
+.pull-left[
+&lt;img src="images/pricing-free.png" width="836" height="150%" style="display: block; margin: auto;" /&gt;
+
+&lt;/br&gt;
+
+&lt;img src="images/pricing-organization.png" width="150%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+
+&lt;/br&gt;
+&lt;/br&gt;
+
+&lt;img src="images/pricing-instructor.png" width="150%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+class:center, inverse
+
+.huge-text[`Shiny` Apps]
+
+
+---
+
+.pull-left[
+.large[demo:]
+]
+
+.pull-right[
+.small[
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;/br&gt; 
+https://kbodwin.shinyapps.io/Lab_Exercise_CatVars2]
+]
+
+
+&lt;img src="images/app_example.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+.pull-left[
+.large[**Good!**]
+
+
+* Students get experience with code without typing code
+
+* Gives them an easy "copy-paste" resource
+
+* No need to install or interact with R/RStudio
+
+]
+
+--
+
+.pull-right[
+.large[**Not so good...**]
+
+* Apps need to be hosted somewhere
+
+* Many students using app at once = high computing demand
+
+* Hard to create (for now)
+
+]
+
+---
+
+class: center
+
+&lt;/br&gt;
+&lt;/br&gt;
+
+.pull-left[
+.larger[Solutions:]
+]
+
+.pull-right[
+.larger[`shindig`]
+] 
+
+---
+
+.center[
+.larger[`shindig`]
+]
+
+
+* R package to create your own exercises
+
+--
+
+*  Distribute exercises to students in package form
+
+*  More info: https://rstudio.github.io/learnr/publishing.html
+
+
+---
+
+
+```r
+penguins %&gt;%
+  filter(bill_length_mm &gt; 5) %&gt;%
+  ggplot(aes(x  = {quant_var}, fill = {cat_var})) +
+  geom_histogram()
+```
+
+
+```r
+textInput("quant_var", 
+          "What quantitative variable?")
+
+textInput("cat_var", 
+          "What categorical variable?")
+```
+
+
+```r
+decorate_shiny("plot1") %&gt;%
+  shindig("renderPlot")
+```
+
+
+```r
+plotOutput("plot1") 
+```
+
+---
+
+class:center, inverse
+
+.huge-text[`learnr` Tutorials]
+
+---
+
+## 📦 learnr
+
+- **learnr** is an R package that makes it easy to create interactive tutorials from R Markdown documents.
+
+- Tutorials can include:
+  - Narrative, figures, illustrations, and equations
+  - Code exercises (R code chunks that users can edit and execute directly)
+  - Multiple choice questions
+  - Videos (YouTube, Vimeo)
+  - Interactive Shiny components
+
+- learnr is on CRAN
+
+
+```r
+install.packages("learnr")
+```
+
+---
+
+background-image: url(images/learnr.png)
+background-position: center
+background-repeat: no-repeat
+background-size: 1000px
+class: middle
+
+---
+
+.huge-text[demo]
+
+.large[
+[**`[tutorial]`**](https://rstudio.github.io/learnr/)
+
+[**`[code]`**](https://github.com/rstudio/learnr/blob/master/inst/tutorials/ex-data-filter/ex-data-filter.Rmd)
+]
+
+---
+
+class:center
+
+&lt;/br&gt;
+
+.larger[Components of a `learnr` tutorial]
+
+
+---
+
+## YAML
+
+Start with a YAML, just like in R Markdown:
+
+
+```r
+---
+title: "Starting with Data"
+output: 
+  learnr::tutorial:
+    progressive: true
+    allow_skip: true
+runtime: shiny_prerendered
+---
+```
+
+1. Create a new RMarkdown file
+2. Select from Template
+3. Choose the Interactive Tutorial template from `learnr`
+4. Start editing! 
+
+---
+
+## Narrative
+
+- R Markdown style section and subsection headings with `##`, `###`, etc.
+- Text, figures, illustrations, and equations.
+- Videos: supported services include YouTube and Vimeo
+
+&lt;img src="images/learnr-narrative.png" width="580" height="75%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Multiple choice questions
+
+
+```r
+quiz(
+  question("What position is the letter A in the english alphabet?",
+    answer("8"),
+    answer("14"),
+    answer("1", correct = TRUE),
+    answer("23"),
+    incorrect = "See [here](https://en.wikipedia.org/wiki/English_alphabet) and try again.",
+    allow_retry = TRUE
+  ),
+
+  question("Where are you right now? (select ALL that apply)",
+    answer("Planet Earth", correct = TRUE),
+    answer("Pluto"),
+    answer("At a computing device", correct = TRUE),
+    answer("In the Milky Way", correct = TRUE),
+    incorrect = paste0("Incorrect. You're on Earth, ",
+                       "in the Milky Way, at a computer.")
+  )
+)
+```
+
+---
+
+## Code exercises - rendered
+
+&lt;/br&gt;
+&lt;/br&gt; 
+
+&lt;img src="images/code-chunk-highlighted.jpg" width="120%" height="120%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Code exercises - code
+
+&lt;img src="images/learnr-code.png" width="30%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Code exercises - solution
+
+&lt;img src="images/learnr-solution.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+.large[
+.hand[Q: How do I share with my students?]
+]
+
+- Deploy on
+  - shinyapps.io (variety of pricing plans available)
+  - RStudio Connect (free for academic use, requires setup)
+
+- Essential reading:
+
+  - [Publishing learnr Tutorials on shinyapps.io](https://cran.r-project.org/web/packages/learnr/vignettes/shinyapps-publishing.html) by Angela Li
+  - [Teach R with learnr: a powerful tool for remote teaching](https://education.rstudio.com/blog/2020/05/learnr-for-remote/) by Allison Horst
+  - See the [publishing instructions](https://rstudio.github.io/learnr/publishing.html) on the learnr website for step-by-step instructions
+
+---
+
+class: middle, inverse
+
+.huge-text[Questions to Ponder]
+
+---
+
+class: middle
+
+# What are my resources?
+
+* Does your university have server time for hosting `learnr`/`shindig` tutorials?
+
+--
+
+* If not, does your university have funding sources to host these things elsewhere?  (e.g. shinyapps.io)
+
+--
+
+* Can you acquire funding for RStudio Cloud?  Can you charge students to use it?
+
+--
+
+* How much do **you** enjoy creating/teaching with R resources?
+
+---
+
+class: middle
+
+# What are my learning objectives?
+
+* If **learning R** is one of them... 
+
+...students should probably have a native install!
+
+--
+
+* If **understanding how statisticians use code** is one of them ...
+
+... consider `shindig` tutorials, `learnr` tutorials with pre-supplied code, or RS Cloud.
+
+--
+
+* If **software is not a learning objective**...
+
+... consider using R as a back-end only, to make your own life easier.
+
+---
+
+.large[.hand[Thank you!]
+]
+
+.pull-left[Allison
+
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:steelblue;position:relative;"&gt;&lt;path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/&gt;&lt;/svg&gt; atheobol@calpoly.edu
+
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:steelblue;position:relative;"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt;
+@mtstatistics
+
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="rfa" style="height:0.75em;fill:steelblue;position:relative;"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt;
+@atheobold
+
+
+]
+
+.pull-right[Kelly
+
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:steelblue;position:relative;"&gt;&lt;path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/&gt;&lt;/svg&gt; kbodwin@calpoly.edu
+
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:steelblue;position:relative;"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt;
+@kellybodwin
+
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="rfa" style="height:0.75em;fill:steelblue;position:relative;"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt;
+@kbodwin
+
+
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "solarized-light",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
