@@ -58,7 +58,7 @@ wk1 %>% select(-Zoom, -recording, -dt) %>% kable() %>%
 
 <br> 
 
-## `r format(wk2$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk2$Zoom)[1]`)[[Recording]](`r na.omit(wk2$recording)[1]`) 
+## `r format(wk2$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk2$Zoom)[1]`)[[Hub Document]](`r na.omit(wk2$recording)[1]`) 
 
 ```{r wk2}
 wk2 %>% select(-Zoom, -recording, -dt) %>% kable() %>% 
@@ -72,7 +72,7 @@ wk2 %>% select(-Zoom, -recording, -dt) %>% kable() %>%
 
 <br> 
 
-## `r format(wk3$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk3$Zoom)[1]`)[[Recording]](`r na.omit(wk3$recording)[1]`) 
+## `r format(wk3$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk3$Zoom)[1]`)[[Hub Document]](`r na.omit(wk3$recording)[1]`) 
 
 ```{r wk3}
 wk3 %>% select(-Zoom, -recording, -dt) %>% kable() %>% 
