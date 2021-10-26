@@ -1,5 +1,5 @@
 ---
-title: "November presentations"
+title: "March presentations"
 output:
   html_document:
     toc: no
@@ -12,7 +12,7 @@ library(kableExtra); library(lubridate)
 options(knitr.table.format = "html", knitr.kable.NA = '') 
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE) 
 
-raw <- read_sheet("https://docs.google.com/spreadsheets/d/1VjhdTRbQrnbgKvYvxaYUQRUDhzHItW0ITfUejQclBb4/edit#gid=1389752095") %>%
+raw <- read_sheet("https://docs.google.com/spreadsheets/d/1MJG0lwuE9f03LXEtaH53j-uJGHwAsAO1ckP_jDAm0gY") %>%
         mutate(dt = date(Date), 
                Name = paste(Name, sprintf("[%s](mailto:%s)", Email, Email)), 
                Affiliation = ifelse(!is.na(webpage), sprintf("[%s](%s)", Affiliation, webpage), Affiliation)) %>% 
@@ -20,9 +20,9 @@ raw <- read_sheet("https://docs.google.com/spreadsheets/d/1VjhdTRbQrnbgKvYvxaYUQ
         relocate(c(Time,Name), .before=1)
 
 
-wk1 <- filter(raw, dt=="2021-11-05") %>% arrange(Time)
-wk2 <- filter(raw, dt=="2021-11-12") %>% arrange(Time)
-wk3 <- filter(raw, dt=="2021-11-19") %>% arrange(Time)
+wk1 <- filter(raw, dt=="2021-03-05") %>% arrange(Time)
+wk2 <- filter(raw, dt=="2021-03-12") %>% arrange(Time)
+wk3 <- filter(raw, dt=="2021-03-19") %>% arrange(Time)
 
 ```
 
@@ -30,16 +30,21 @@ wk3 <- filter(raw, dt=="2021-11-19") %>% arrange(Time)
 
 ----
 
+# Sustaining Quality Online Learning Through the Pandemic (and Beyond): Sharing Successes with Active Student Engagement.
+
+## Abstract
+Regardless of your experience teaching active student-centered classes, the shift to teaching active student-centered online classes during a global pandemic has presented new kinds of challenges for us all. Moreover, the flexibility afforded by online learning will likely lead to more demand for quality online instruction, so instructors will need the relevant skills in their toolkits even after our return to a new normal. Through a series of three interactive sessions we will explore strategies for responding to these challenges and supporting our students’ online learning through this troubling time and beyond.
+
+
 Hosts: 
 
-* **Claudia  Bertolone-Smith**, Assistant Professor of Education & Multiple Subjects Program Coordinator, California State University Chico (cmbertolone-smith@csuchico.edu)
-* **Ferdie Rivera**, Professor, Department of Math & Statistics, San Jose State University (ferdinand.rivera@sjsu.edu)
+* **Julia Olkin**, Professor; Mathematics Department; California State University, East Bay (julia.olkin@csueastbay.edu)
 
 ----
 
-## `r format(wk1$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk1$Zoom)[1]`)
 
-### Theme: Access and Equity Perspectives and Practices in Mathematics Teaching and Learning
+
+## `r format(wk1$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk1$Zoom)[1]`)[[Slides]](`r na.omit(wk1$recording)[1]`) 
 
 ```{r, wk1}
 wk1 %>% select(-Zoom, -recording, -dt) %>% kable() %>% 
@@ -51,11 +56,9 @@ wk1 %>% select(-Zoom, -recording, -dt) %>% kable() %>%
   column_spec(5, width = "35%")
 ```
 
-<br> <br> 
+<br> 
 
-## `r format(wk2$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk2$Zoom)[1]`)
-
-### Theme: Academic Literacy and Language in Mathematics from an Access and Equity Lens
+## `r format(wk2$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk2$Zoom)[1]`)[[Hub Document]](`r na.omit(wk2$recording)[1]`) 
 
 ```{r wk2}
 wk2 %>% select(-Zoom, -recording, -dt) %>% kable() %>% 
@@ -69,9 +72,7 @@ wk2 %>% select(-Zoom, -recording, -dt) %>% kable() %>%
 
 <br> 
 
-## `r format(wk3$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk3$Zoom)[1]`)
-
-### Theme: Culturally Relevant Mathematics Teaching from an Access and Equity Perspective
+## `r format(wk3$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk3$Zoom)[1]`)[[Hub Document]](`r na.omit(wk3$recording)[1]`) 
 
 ```{r wk3}
 wk3 %>% select(-Zoom, -recording, -dt) %>% kable() %>% 

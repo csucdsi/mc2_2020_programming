@@ -13,17 +13,25 @@
 
 <title>September Presentations</title>
 
+<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -37,32 +45,7 @@
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 
 
@@ -72,10 +55,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -92,40 +71,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -153,7 +105,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -165,7 +117,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -176,10 +128,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -191,7 +156,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -263,7 +227,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Math Council Fall 2020 Colloqium</a>
+      <a class="navbar-brand" href="index.html">Math Council Colloqium - 2021-22 Series</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -271,18 +235,24 @@ $(document).ready(function () {
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="index.html">January</a>
-</li>
-<li>
-  <a href="February.html">February</a>
+  <a href="index.html">November</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Fall talks
+    2019-20 talks
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="January.html">January</a>
+    </li>
+    <li>
+      <a href="February.html">February</a>
+    </li>
+    <li>
+      <a href="March.html">March</a>
+    </li>
     <li>
       <a href="November.html">November</a>
     </li>
@@ -299,7 +269,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -604,27 +574,28 @@ In this talk, I will provide a brief introduction to Python, NumPy, and Jupyter 
 <hr>
 <h2> Participating Institutions </h2>
 <a href="https://www.cpp.edu/sci/mathematics-statistics/index.shtml">
-  <img src="cpp.png" style="float: left; width: 10%; margin-right: 1%; margin-bottom: 0.5em;">
+  <img src="cpp.png" style="float: left; width: 6%; margin-right: 1%; margin-bottom: 0.5em;">
 </a>
 <a href="https://www.csuchico.edu/math/">
-  <img src="csuc.png" style="float: left; width: 15%; margin-right: 1%; margin-bottom: 0.5em;">
+  <img src="csuc.png" style="float: left; width: 10%; margin-right: 1%; margin-bottom: 0.5em;">
 </a>
 <a href="https://www.csuchico.edu/datascience/">
-  <img src="dsi.png" style="float: left; width: 15%; margin-right: 1%; margin-bottom: 0.5em;">
+  <img src="dsi.png" style="float: left; width: 10%; margin-right: 1%; margin-bottom: 0.5em;">
 </a>
 <a href="https://www.fullerton.edu/math/">
-  <img src="csuf.png" style="float: left; width: 10%; margin-right: 1%; margin-bottom: 0.5em;">
+  <img src="csuf.png" style="float: left; width: 5%; margin-right: 1%; margin-bottom: 0.5em;">
 </a>
 <a href="https://math.humboldt.edu/">
-  <img src="hsu.jpg" style="float: left; width: 15%; margin-right: 1%; margin-bottom: 0.5em;">
+  <img src="hsu.jpg" style="float: left; width: 10%; margin-right: 1%; margin-bottom: 0.5em;">
 </a>
 <a href="https://www.csueastbay.edu/math/">
-  <img src="csueb.png" style="float: left; width: 20%; margin-right: 1%; margin-bottom: 0.5em; margin-top: 3%">
+  <img src="csueb.png" style="float: left; width: 15%; margin-right: 1%; margin-bottom: 0.5em; margin-top: 3%">
 </a>
 <a href="https://statistics.calpoly.edu/">
-  <img src="slo.jpg" style="float: left; width: 20%; margin-right: 1%; margin-bottom: 0.5em; margin-top: 3%">
+  <img src="slo.jpg" style="float: left; width: 15%; margin-right: 1%; margin-bottom: 0.5em; margin-top: 3%">
 </a>
 <p style="clear: both;">
+  
 
 
 
@@ -652,7 +623,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

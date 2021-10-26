@@ -1,16 +1,18 @@
 name: "MC2"
 output_dir: "."
 navbar:
-  title: "Math Council Fall 2020 Colloqium"
+  title: "Math Council Colloqium - 2021-22 Series"
   right: 
-  - text: "January"
-    href: January.html
-  - text: "February"
-    href: February.html
-  - text: "March"
+  - text: "November '21"
     href: index.html
-  - text: "Fall talks"
+  - text: "2019-20 talks"
     menu:
+    - text: "January"
+      href: January.html
+    - text: "February"
+      href: February.html
+    - text: "March"
+      href: March.html
     - text: "November"
       href: November.html
     - text: "October"
