@@ -35,6 +35,8 @@ Hosts:
 * **Claudia  Bertolone-Smith**, Assistant Professor of Education & Multiple Subjects Program Coordinator, California State University Chico (cmbertolone-smith@csuchico.edu)
 * **Ferdie Rivera**, Professor, Department of Math & Statistics, San Jose State University (ferdinand.rivera@sjsu.edu)
 
+This month there will be a discussion from 5:30-6pm following each presentation. 
+
 ----
 
 ## `r format(wk1$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk1$Zoom)[1]`)
