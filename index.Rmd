@@ -39,7 +39,7 @@ This month there will be a discussion from 5:30-6pm following each presentation.
 
 ----
 
-## `r format(wk1$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk1$Zoom)[1]`)
+## `r format(wk1$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk1$Zoom)[1]`) [[Recording]](https://media.csuchico.edu/media/CSU+Math+Colloquium+SeriesA+Developing+an+Access-+and+Equity-Oriented++Mindset+in+Mathematics+Teaching+and+Learning/1_99cwg3b4)
 
 ### Theme: Access and Equity Perspectives and Practices in Mathematics Teaching and Learning
 
