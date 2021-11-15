@@ -39,7 +39,7 @@ This month there will be a discussion from 5:30-6pm following each presentation.
 
 ----
 
-## `r format(wk1$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk1$Zoom)[1]`)[[Recording]](`r na.omit(wk1$Zoom)[1]`)
+## `r format(wk1$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk1$Zoom)[1]`) [[Recording]](`r na.omit(wk1$recording)[1]`)
 
 ### Theme: Access and Equity Perspectives and Practices in Mathematics Teaching and Learning
 
@@ -55,7 +55,7 @@ wk1 %>% select(-Zoom, -recording, -dt) %>% kable() %>%
 
 <br> <br> 
 
-## `r format(wk2$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk2$Zoom)[1]`)
+## `r format(wk2$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk2$Zoom)[1]`) [[Recording]](`r na.omit(wk2$recording)[1]`)
 
 ### Theme: Academic Literacy and Language in Mathematics from an Access and Equity Lens
 
