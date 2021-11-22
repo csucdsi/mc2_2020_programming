@@ -71,7 +71,7 @@ wk2 %>% select(-Zoom, -recording, -dt) %>% kable() %>%
 
 <br> 
 
-## `r format(wk3$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk3$Zoom)[1]`)
+## `r format(wk3$dt[1], "%A, %B %d, %Y")` [[Zoom Link]](`r na.omit(wk3$Zoom)[1]`)[[Recording]](`r na.omit(wk3$recording)[1]`)
 
 ### Theme: Culturally Relevant Mathematics Teaching from an Access and Equity Perspective
 
